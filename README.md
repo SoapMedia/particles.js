@@ -1,3 +1,17 @@
+### Bugfix 
+
+***An FPS limiter has been included in the code to help resolve CPU utilization issues***
+
+This functions by using a setTimeout() method to limit the number of calls to requestAnimationFrame.
+As specified in the documentation this can be set in the JSON.
+
+Happy Coding!
+
+
+
+
+------------------------------
+
 ## particles.js
 
 ### A lightweight JavaScript library for creating particles.
@@ -36,6 +50,7 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
 **particles.json**
 ```javascript
 {
+  "fps_limit": 30,
   "particles": {
     "number": {
       "value": 80,
@@ -152,7 +167,8 @@ particlesJS.load('particles-js', 'assets/particles.json', function() {
 ### `Options`
 
 key | option type / notes | example
-----|---------|------|------
+----|---------|------
+'particles.fps_limit' | Limits the fps of the animation redraw, set to 0 for no limit | '30'
 `particles.number.value` | number | `40`
 `particles.number.density.enable` | boolean | `true` / `false` 
 `particles.number.density.value_area` | number | `800`
